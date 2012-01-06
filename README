@@ -1,0 +1,16 @@
+Note: you must be on a modern 64 bit x86 linux
+
+On ubuntu, requires 
+	apt-get install build-essential gnu-efi qemu
+
+Then get the following BIOS for qemu:
+	wiki.qemu.org/download/efi-bios.tar.bz2
+
+Extract it to a directory (e.g. bios/) then do, like:
+	qemu-system-x86_64 -L bios/ -hda fat:path/to/efiApp
+
+When it starts, do
+	Shell> blk0:
+	blk0:\> helloworld.efi
+
+If you're lucky, it'll say Hello World (from Cameron!)
